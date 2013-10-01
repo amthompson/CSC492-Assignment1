@@ -23,10 +23,9 @@
             android:hint="@string/prompt_query"
             android:imeOptions="actionNext"
             android:inputType="text"
-            android:singleLine="true" >
+            android:singleLine="true"
+            android:nextFocusRight="@+id/text_tag" />
 
-            <requestFocus />
-        </EditText>
     </TableRow>
 
     <TableRow
@@ -42,7 +41,8 @@
             android:hint="@string/prompt_tag"
             android:imeOptions="actionDone"
             android:inputType="text"
-            android:singleLine="true" />
+            android:singleLine="true"
+            android:nextFocusRight="@+id/button_save" />
 
         <Button
             android:id="@+id/button_save"
