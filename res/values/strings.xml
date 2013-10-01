@@ -10,5 +10,6 @@
     <string name="button_clear">Clear All Tags</string>
     <string name="prompt_tag">Enter tag name</string>
     <string name="prompt_query">Enter Twitter search query here</string>
+    <string name="search_url">http://twitter.com/search?q=</string>
 
 </resources>
