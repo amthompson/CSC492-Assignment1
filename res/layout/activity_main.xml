@@ -23,8 +23,7 @@
             android:hint="@string/prompt_query"
             android:imeOptions="actionNext"
             android:inputType="text"
-            android:singleLine="true"
-            android:nextFocusRight="@+id/text_tag" />
+            android:singleLine="true" />
 
     </TableRow>
 
@@ -35,7 +34,7 @@
 
         <EditText
             android:id="@+id/text_tag"
-            android:layout_width="wrap_content"
+            android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:layout_weight="3"
             android:hint="@string/prompt_tag"
@@ -64,24 +63,25 @@
             android:layout_span="2"
             android:gravity="center"
             android:text="@string/tagged_search_title"
-            android:textSize="@dimen/tagged_search_size" />
+            android:textSize="@dimen/tagged_search_size"
+            android:background="@color/tagged_search_background" />
     </TableRow>
 
     <TableRow
         android:id="@+id/tableRow4"
-        android:layout_width="fill_parent"
-        android:layout_height="fill_parent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:background="@color/tagged_search_background" >
 
         <ScrollView
             android:id="@+id/scrollView1"
             android:layout_width="fill_parent"
-            android:layout_height="fill_parent"
+            android:layout_height="wrap_content"
             android:layout_span="2" >
 
             <TableLayout
                 android:id="@+id/TableLayout2"
-                android:layout_width="match_parent"
+                android:layout_width="fill_parent"
                 android:layout_height="wrap_content" >
             </TableLayout>
         </ScrollView>

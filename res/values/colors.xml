@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="tagged_search_background">#dddddd</color>
+    
+    <color name="tagged_search_background">#B8ECF5</color>    
+    <color name="tagged_search_button">#3999A8</color> 
+    <color name="tagged_search_text">#ffffff</color>
     
 </resources>

@@ -7,7 +7,6 @@ import java.util.Arrays;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
-import android.content.DialogInterface.OnClickListener;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.net.Uri;
@@ -188,7 +187,7 @@ public class MainActivity extends Activity {
 			// inflate the tagged search view
 			View tagRowView = inflater.inflate(R.layout.tagged_search, null);
 
-			// update the button text to tag name
+			// update the button text to tag name and fit width
 			final Button tagButton = (Button) tagRowView.findViewById(R.id.button_tag);			
 			tagButton.setText(tag);
 						
@@ -199,6 +198,7 @@ public class MainActivity extends Activity {
 				}
 			});
 			
+			// edit button and listener
 			Button editButton = (Button) tagRowView.findViewById(R.id.button_edit);
 			editButton.setOnClickListener(new Button.OnClickListener() {
 				@Override
@@ -207,6 +207,7 @@ public class MainActivity extends Activity {
 				}
 			});	
 			
+			// delete button and listener
 			Button deleteButton = (Button) tagRowView.findViewById(R.id.button_delete);
 			deleteButton.setOnClickListener(new Button.OnClickListener() {
 				@Override
