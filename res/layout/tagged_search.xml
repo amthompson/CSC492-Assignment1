@@ -1,39 +1,42 @@
 <?xml version="1.0" encoding="utf-8"?>
 <TableRow xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent" >
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content" >
 
     <Button
         android:id="@+id/button_tag"
-        android:layout_width="match_parent"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
+        android:layout_gravity="center"
         android:layout_weight="6"
-        android:layout_margin="4dip"
+        android:layout_marginLeft="@dimen/regular_margin"
+        android:layout_marginRight="@dimen/regular_margin"
+        android:layout_marginTop="@dimen/half_margin"
+        android:layout_marginBottom="@dimen/half_margin"
         android:background="@color/tagged_search_button"
         android:textColor="@color/tagged_search_text"
         android:text="" />
 
     <Button
         android:id="@+id/button_edit"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
+        android:layout_gravity="center"
         android:layout_weight="1"
+        android:layout_marginRight="@dimen/regular_margin"
         android:background="@color/tagged_search_button"
         android:textColor="@color/tagged_search_text"
-        android:layout_margin="4dip"
         android:text="@string/button_edit" />
 
     <Button
         android:id="@+id/button_delete"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
+        android:layout_gravity="center"
         android:layout_weight="1"
+        android:layout_marginRight="@dimen/regular_margin"
         android:background="@color/tagged_search_button"
         android:textColor="@color/tagged_search_text"
-        android:layout_margin="4dip"
         android:text="@string/button_delete" />
 
 </TableRow>

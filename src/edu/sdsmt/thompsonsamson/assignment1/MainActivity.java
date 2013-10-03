@@ -3,7 +3,6 @@ package edu.sdsmt.thompsonsamson.assignment1;
 import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;
 import java.util.Arrays;
-
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
@@ -37,7 +36,7 @@ public class MainActivity extends Activity {
 		// setup shared preferences object
 		_savedSearches = getSharedPreferences("tags", MODE_PRIVATE);
 		
-		// define the text fields
+		// define variables
 		_objQuery = (EditText) findViewById(R.id.text_query);
 		_objTag = (EditText) findViewById(R.id.text_tag);
 		_tagListTableLayout = (TableLayout) findViewById(R.id.TableLayout2);
@@ -46,26 +45,22 @@ public class MainActivity extends Activity {
 		// button click to save search information
 		Button button_save = (Button) findViewById(R.id.button_save);
 		button_save.setOnClickListener(new Button.OnClickListener() {
-
 			@Override
 			public void onClick(View v) {
 				saveTag();
-			}
-		    
+			}		    
 		});
 		
 		// button click to clear all tag information
 		Button button_clear = (Button) findViewById(R.id.button_clear);
 		button_clear.setOnClickListener(new Button.OnClickListener() {
-
 			@Override
 			public void onClick(View v) {
 				sendClearTagsAlert();
-			}
-			
+			}			
 		});
 
-		// when the app starts, list any current searches
+		// when the application starts, list any current searches
 		getTaggedSearches();
 	}
 
@@ -94,16 +89,15 @@ public class MainActivity extends Activity {
 		}
 		prefEditor.putString( tag, query );
 		prefEditor.commit();
-		
-		
-		// refresh the search tags
-		getTaggedSearches();
-		
+				
 		// clear the text fields
 		_objQuery.setText("");
 		_objTag.setText("");
-				
-		return;
+		_objQuery.clearFocus();
+		_objTag.clearFocus();
+		
+		// refresh the search tags
+		getTaggedSearches();
 	}
 
 	private void sendClearTagsAlert() {
@@ -165,10 +159,6 @@ public class MainActivity extends Activity {
 		alert.show();
 	}
 	
-	
-	/*
-	 * 
-	 */
 	private void getTaggedSearches ()
 	{	
 		// clear any existing view
@@ -218,8 +208,7 @@ public class MainActivity extends Activity {
 			
 			// add the view to the layout
 			_tagListTableLayout.addView(tagRowView);
-		}
-		
+		}	
 	}
 
 	public void displaySearch(String tag) {
@@ -235,9 +224,7 @@ public class MainActivity extends Activity {
 		} catch (UnsupportedEncodingException e) {
 			e.printStackTrace();
 		}
-
 	}
-	
 	
 	public void editTag(String tag) {
 		// get query from tag pairing in shared preferences
@@ -257,18 +244,14 @@ public class MainActivity extends Activity {
 		prefEditor.commit();
 		
 		getTaggedSearches();
-		
 	}
 
 	// clear all tags - be sure to do alert
-	private void deleteAllTags()
-	{
+	private void deleteAllTags() {
 		SharedPreferences.Editor prefEditor = _savedSearches.edit();
 		prefEditor.clear();
 		prefEditor.commit();
 		
 		_tagListTableLayout.removeAllViews();	
 	}
-
-
 }
