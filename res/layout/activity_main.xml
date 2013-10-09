@@ -14,8 +14,9 @@
 
     <TableRow
         android:id="@+id/tableRow1"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" >
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="0" >
 
         <EditText
             android:id="@+id/text_query"
@@ -31,8 +32,9 @@
 
     <TableRow
         android:id="@+id/tableRow2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" >
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="0" >
 
         <EditText
             android:id="@+id/text_tag"
@@ -55,8 +57,9 @@
 
     <TableRow
         android:id="@+id/tableRow3"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" >
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="0" >
 
         <TextView
             android:id="@+id/tag_title"
@@ -73,13 +76,14 @@
 
     <TableRow
         android:id="@+id/tableRow4"
-        android:layout_width="match_parent"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_weight="1"
         android:background="@color/tagged_search_background" >
 
         <ScrollView
             android:id="@+id/scrollView1"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_span="2" >
 
@@ -93,8 +97,9 @@
 
     <TableRow
         android:id="@+id/tableRow5"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" >
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="0" >
 
         <Button
             android:id="@+id/button_clear"
