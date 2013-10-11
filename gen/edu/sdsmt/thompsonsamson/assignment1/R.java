@@ -34,11 +34,12 @@ public final class R {
     public static final class id {
         public static final int TableLayout1=0x7f090000;
         public static final int TableLayout2=0x7f09000a;
+        public static final int TableRowTag=0x7f09000d;
         public static final int button_clear=0x7f09000c;
-        public static final int button_delete=0x7f09000f;
-        public static final int button_edit=0x7f09000e;
+        public static final int button_delete=0x7f090010;
+        public static final int button_edit=0x7f09000f;
         public static final int button_save=0x7f090005;
-        public static final int button_tag=0x7f09000d;
+        public static final int button_tag=0x7f09000e;
         public static final int scrollView1=0x7f090009;
         public static final int tableRow1=0x7f090001;
         public static final int tableRow2=0x7f090003;
