@@ -1,18 +1,6 @@
-/******************************************************************************
+/**
  *	Project:	Assignment 1 - Twitter Tag Search
- *	Authors:	Andrew Thompson & Scott Samson
- *	Date:		10/1/2013
- *	Purpose:	Android application to save twitter tags and call searches.
- *				Items used: SharedPreferences, Intents, Anonymous Inner Classes,
- *				Inflating views, and layout design.
- *	Repository:	https://github.com/amthompson/CSC421-Assignment1
- *	Timeline:	9/28/2013:	Initial layout design (AT)
- *				10/1/2013:	Program functionality (AT&SS)
- *				10/2/2013:	Edit layout colors and icon (AT)
- *				10/3/2013:	Fix layout bugs (AT)
- *				10/4/2013:	Finalize comments
- *	Bugs:		none found yet 
- ******************************************************************************/
+ */
 package edu.sdsmt.thompsonsamson.assignment1;
 
 // imported libraries
@@ -32,13 +20,28 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TableLayout;
 
-
-/******************************************************************************
- * Class:	MainActivity
- * Purpose:	Main entry to the application. Create twitter search tags and
- * 			store them in shared preferences. Allow user to edit and delete
- * 			tags and to clear all tags.
- *****************************************************************************/
+/**
+ * Android application to save twitter tags and call searches. Items used: 
+ * SharedPreferences, Intents, Anonymous Inner Classes, Inflating views, and 
+ * layout design.
+ * <p>
+ * Main entry to the application. Create twitter search tags and store them 
+ * in shared preferences. Allow user to edit and delete tags and to clear all tags.
+ * <p>
+ * <a href="https://github.com/amthompson/CSC421-Assignment1">GitHub Repository</a>
+ * <p>
+ * Timeline:
+ * <ul>
+ * 	<li>9/28/2013:	Initial layout design (AT)</li>
+ *	<li>10/1/2013:	Program functionality (AT&SS)</li>
+ *	<li>10/2/2013:	Edit layout colors and icon (AT)</li>
+ *	<li>10/3/2013:	Fix layout bugs (AT)</li>
+ *	<li>10/4/2013:	Finalize comments</li>
+ * </ul>
+ * @author Andrew Thompson
+ * @author Scott Samson
+ * Date 10/1/2013
+ */
 public class MainActivity extends Activity {
 
 	SharedPreferences _savedSearches;		// saved search tags
@@ -47,13 +50,11 @@ public class MainActivity extends Activity {
 	TableLayout _tagListTableLayout;		// tag search table
 	String _editTag;						// current tag being edited
 	
-	/**************************************************************************
-	 * Method:	onCreate
-	 * Purpose:	Main entry point for activity. Called when application is
-	 * 			created. Defines activity-wide members and click listeners for 
-	 * 			save and clear buttons.
-	 * Params:	savedInstanceState - Bundle to record lifecycle data
-	 **************************************************************************/
+	/**
+	 * Main entry point for activity. Called when application is created. 
+	 * Defines activity-wide members and click listeners for save and clear buttons.
+	 * @param	savedInstanceState	Bundle to record lifecycle data
+	 */
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -90,11 +91,9 @@ public class MainActivity extends Activity {
 		getTaggedSearches();
 	}
 
-	/**************************************************************************
-	 * Method:	saveTag
-	 * Purpose:	Add or updates the query andtag information to the saved preferences
-	 * Params:	none
-	 **************************************************************************/
+	/**
+	 * Add or updates the query and tag information to the saved preferences
+	 */
 	private void saveTag()
 	{
 		// get text fields values
@@ -129,11 +128,9 @@ public class MainActivity extends Activity {
 		getTaggedSearches();
 	}
 
-	/**************************************************************************
-	 * Method: 	getTaggedSearches
-	 * Purpose:	Display the tagged searches from the shared preferences.
-	 * Params:	none
-	 *************************************************************************/
+	/**
+	 * Display the tagged searches from the shared preferences.
+	 */
 	private void getTaggedSearches ()
 	{	
 		// clear any existing view
@@ -187,12 +184,11 @@ public class MainActivity extends Activity {
 		}	
 	}
 
-	/**************************************************************************
-	 * Method:	sendQueryIntent
-	 * Purpose:	Sends intent when a tag is clicked on. URL encodes the query 
-	 * 			string and appends it onto the search url.
-	 * Params:	tag - the unique tag to lookup the key/pair value
-	 *************************************************************************/
+	/**
+	 * Sends intent when a tag is clicked on. URL encodes the query string and appends 
+	 * it onto the search URL.
+	 * @param tag the unique tag to lookup the key/pair value
+	 */
 	public void sendQueryIntent(String tag) {
 
 		// the URL encoder is required to be in a try/catch block
@@ -211,13 +207,12 @@ public class MainActivity extends Activity {
 		}
 	}
 
-	/**************************************************************************
-	 * Method: 	editTag
-	 * Purpose:	Edit an existing search tag. Sets the application variable 
-	 * 			to record which tag is being edited and fills in the query/tag text
-	 * 			fields. The save click listener will update the tag.
-	 * Params:	tag - the unique tag to lookup the key/pair value
-	 *************************************************************************/
+	/**
+	 * Edit an existing search tag. Sets the application variable to record which 
+	 * tag is being edited and fills in the query/tag text fields. The save click 
+	 * listener will update the tag.
+	 * @param tag the unique tag to lookup the key/pair value
+	 */
 	public void editTag(String tag) {
 		// get query from tag pairing in shared preferences
 		String query = _savedSearches.getString(tag, null);
@@ -229,11 +224,10 @@ public class MainActivity extends Activity {
 		_editTag = tag;
 	}
 
-	/**************************************************************************
-	 * Method:	deleteTag
-	 * Purpose:	Delete an existing tag from the saved preferences.
-	 * Params:	tag - the unique tag to lookup the key/pair value
-	 *************************************************************************/
+	/**
+	 * Delete an existing tag from the saved preferences.
+	 * @param tag the unique tag to lookup the key/pair value
+	 */
 	private void deleteTag(String tag) {
 		
 		// create the editor and remove the tag
@@ -245,12 +239,10 @@ public class MainActivity extends Activity {
 		getTaggedSearches();
 	}
 
-	/**************************************************************************
-	 * Method:	deleteAllTags
-	 * Purpose: Deletes all key/value pairs from the saved preferences and
-	 * 			removes all the inflated views from the tagged searches.
-	 * Params:	none
-	 *************************************************************************/
+	/**
+	 * Deletes all key/value pairs from the saved preferences and removes all 
+	 * the inflated views from the tagged searches.
+	 */
 	private void deleteAllTags() {
 
 		// create the editor and remove all tags
@@ -262,11 +254,9 @@ public class MainActivity extends Activity {
 		_tagListTableLayout.removeAllViews();	
 	}
 
-	/**************************************************************************
-	 * Method:	sendCheckInputAlert
-	 * Purpose:	Sends an alert if both the query and tag text fields are empty
-	 * Params:	none
-	 *************************************************************************/
+	/**
+	 * Sends an alert if both the query and tag text fields are empty.
+	 */
 	private void sendCheckInputAlert() {
 		// build the alert dialog
 		AlertDialog.Builder alertBuilder = new AlertDialog.Builder(this);
@@ -280,11 +270,10 @@ public class MainActivity extends Activity {
 		alert.show();
 	}
 
-	/**************************************************************************
-	 * Method:	sendDeleteTagAlert
-	 * Purpose:	Sends an alert to the user to confirm a single tag delete
-	 * Params:	none
-	 *************************************************************************/
+	/**
+	 * Sends an alert to the user to confirm a single tag delete.
+	 * @param tag the unique tag to lookup the key/pair value
+	 */
 	private void sendDeleteTagAlert(final String tag) {
 		// build the alert dialog
 		AlertDialog.Builder alertBuilder = new AlertDialog.Builder(this);
@@ -309,11 +298,9 @@ public class MainActivity extends Activity {
 		alert.show();		
 	}
 
-	/**************************************************************************
-	 * Method:	sendClearTagsAlert
-	 * Purpose:	Sends an alert to the user to confirm deletion of all searches
-	 * Params:	none
-	 *************************************************************************/
+	/**
+	 * Sends an alert to the user to confirm deletion of all searches.
+	 */
 	private void sendClearTagsAlert() {
 		// build the alert dialog
 		AlertDialog.Builder alertBuilder = new AlertDialog.Builder(this);
